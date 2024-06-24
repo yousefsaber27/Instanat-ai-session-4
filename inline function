@@ -1,0 +1,49 @@
+### Inline Functions in C++
+
+Inline functions in C++ are used to reduce function call overhead. They are expanded in line when called, with the entire function code inserted at the point of the call by the compiler at compile time.
+
+#### Syntax:
+```cpp
+inline return-type function-name(parameters)
+{
+    // function code
+}
+```
+
+#### Advantages of Inline Functions:
+- **Reduced Overhead**: Eliminates the overhead of function call setup and return.
+- **Performance**: Can improve performance for small, frequently-called functions.
+- **Optimizations**: Enables context-specific optimizations that are not possible for normal function calls.
+- **Embedded Systems**: Useful in embedded systems for reducing code size and enhancing speed.
+
+#### Disadvantages of Inline Functions:
+- **Increased Code Size**: May increase executable size due to duplicated function code.
+- **Compiler Decision**: The compiler may choose not to inline functions under certain circumstances (e.g., recursive functions, functions with loops).
+- **Register Overhead**: If a function uses many variables, inlining can increase register usage overhead.
+- **Maintenance**: Changes to inline function code require recompiling all calls to reflect updates.
+
+#### Usage Guidelines:
+- **Small Functions**: Inline functions are most effective for small, frequently-called functions.
+- **Avoid I/O**: Functions involving heavy I/O operations should not be defined as inline.
+- **Class Member Functions**: Functions defined inside a class are implicitly inline.
+
+#### Example:
+```cpp
+#include <iostream>
+using namespace std;
+
+inline int cube(int s) {
+    return s * s * s;
+}
+
+int main() {
+    cout << "The cube of 3 is: " << cube(3) << "\n";
+    return 0;
+}
+```
+
+#### Note:
+- Inline functions are a request to the compiler and may not always be honored.
+- Avoid using inline functions excessively to prevent code size inflation and potential performance degradation.
+
+Inline functions are a powerful feature in C++ for optimizing performance in appropriate scenarios, such as small utility functions and embedded systems where code size and speed are critical factors.
