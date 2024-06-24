@@ -1,0 +1,25 @@
+### \( n^n \) Time Complexity
+
+**Example**: Generating all subsets of a set of \( n \) elements.
+
+**Explanation**:
+- Each element in the set can either be included or excluded from a subset independently.
+- Therefore, there are \( 2^n \) possible subsets because each of the \( n \) elements has 2 choices (include or exclude).
+
+**Time Complexity**: \( O(2^n) \), which simplifies to \( O(n^n) \) for large \( n \) because \( 2^n \) is asymptotically equivalent to \( n^n \).
+
+### \( n! \) Time Complexity
+
+**Example**: Generating all permutations of a set of \( n \) elements.
+
+**Explanation**:
+- There are \( n! \) possible permutations of \( n \) elements (i.e., factorial growth).
+
+**Time Complexity**: \( O(n!) \), where each permutation involves \( n \) elements arranged in a different order.
+
+### Summary
+
+- **\( n^n \) complexity**: Each element's independent choice (like including or excluding) leads to exponential growth in computations.
+- **\( n! \) complexity**: Involves factorial growth due to generating permutations or combinations of elements.
+
+In practical terms, \( n^n \) complexity algorithms are more computationally intensive compared to \( n! \) complexity for large \( n \). This distinction helps in understanding the scalability and performance implications of different algorithms on varying input sizes.
