@@ -1,5 +1,3 @@
-Certainly! Here's a GitHub-friendly summary of static member functions in C++:
-
 ### Static Member Function in C++
 
 In C++, a static member function is a function that belongs to the class rather than to instances (objects) of the class. It operates on class-level data and can be invoked without an object of the class.
