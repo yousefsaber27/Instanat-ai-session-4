@@ -1,0 +1,83 @@
+### Differences Between Structure and Class in C++
+
+In C++, structures (`struct`) and classes (`class`) are very similar in syntax and usage, but they differ in some fundamental ways:
+
+| **Feature**                                     | **Class**                                            | **Structure**                                       |
+|--------------------------------------------------|------------------------------------------------------|------------------------------------------------------|
+| **Default Member Access**                        | Private                                               | Public                                               |
+| **Instance Name**                                | Object                                               | Structure Variable                                   |
+| **Member Visibility**                            | Private by default                                    | Public by default                                    |
+| **Keyword Used for Declaration**                 | `class`                                              | `struct`                                             |
+| **Usage**                                        | Data abstraction, inheritance                         | Grouping of data                                     |
+| **NULL Values**                                  | Possible                                              | Not possible                                          |
+| **Inheritance**                                  | Supported                                             | Supported                                             |
+| **Syntax**                                       | ```cpp class ClassName { <br> private: <br> member1; <br> member2; <br> public: <br> member3; <br> ... <br> memberN; <br> }; ``` | ```cpp struct StructureName { <br> member1; <br> member2; <br> ... <br> memberN; <br> }; ``` |
+
+#### Examples Demonstrating Differences:
+
+1. **Default Member Access**:
+
+   - **Class Example**: Members are private by default.
+     ```cpp
+     class Test {
+         int x; // private by default
+     };
+     // Accessing x here would cause a compilation error
+     ```
+   
+   - **Structure Example**: Members are public by default.
+     ```cpp
+     struct Test {
+         int x; // public by default
+     };
+     // Accessing x here is valid
+     ```
+   
+2. **Keyword for Declaration**:
+
+   - **Class Example**:
+     ```cpp
+     class ClassName {
+         // Members and methods
+     };
+     ```
+   
+   - **Structure Example**:
+     ```cpp
+     struct StructureName {
+         // Members
+     };
+     ```
+   
+3. **Inheritance**:
+
+   - **Class Example**:
+     ```cpp
+     class Parent {
+     public:
+         int x;
+     };
+     
+     class Child : public Parent {
+     public:
+         int y;
+     };
+     ```
+   
+   - **Structure Example**:
+     ```cpp
+     struct Base {
+         int x;
+     };
+     
+     struct Derived : Base {
+         int y;
+     };
+     ```
+
+### Summary
+
+- **Class**: Focuses on data abstraction and supports inheritance, with members private by default.
+- **Structure**: Primarily used for grouping data and members are public by default.
+
+These differences dictate their usage in various programming scenarios, allowing programmers to choose the appropriate structure (`struct`) or class (`class`) based on the encapsulation and inheritance requirements of their design.
